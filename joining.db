@@ -1,0 +1,33 @@
+-- JOIN used to join two tables .
+-- Setting up a simple table.
+
+CREATE TABLE user_a (
+    a INT PRIMARY KEY,
+    fruit_a VARCHAR (100) NOT NULL
+);
+
+CREATE TABLE user_b (
+    b INT PRIMARY KEY,
+    fruit_b VARCHAR (100) NOT NULL
+);
+
+INSERT INTO user_a (a, fruit_a)
+VALUES
+    (1, 'Apple'),
+    (2, 'Orange'),
+    (3, 'Banana'),
+    (4, 'Cucumber');
+
+INSERT INTO user_b (b, fruit_b)
+VALUES
+    (1, 'Orange'),
+    (2, 'Apple'),
+    (3, 'Watermelon'),
+    (4, 'Pear');
+
+-- INNER JOIN joins two tables on common columns.
+-- The result is a new table with the common columns.
+SELECT a, fruit_a, b, fruit_b
+FROM user_a
+INNER JOIN user_b
+ON user_a.fruit_a = user_b.fruit_b;
